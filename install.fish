@@ -7,7 +7,7 @@ if [ "$os" = "Darwin" ]
 	set fullpath $(greadlink -f nvim/init.lua)
 	ln -sf "$fullpath" $HOME/nvim/init.lua
 else
-	set fullpath = $(readlink -f nvim/init.lua)
+	set fullpath $(readlink -f nvim/init.lua)
 	ln -sf $fullpath $HOME/nvim/init.lua
 end
 
