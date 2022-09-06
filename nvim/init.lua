@@ -21,8 +21,23 @@ vim.wo.number = true -- Displays line numbers on the left
 vim.wo.relativenumber = true -- Dispalys line numbers as lines relative to current line (helps with motion commands)
 vim.wo.signcolumn = 'yes' -- Always displays the sign column, a gutter on the left next to the line numbers
 
-
 vim.g.mapleader = ' ' -- Set the leader to space to avoid pollution global map space
+
+-- Neovide settings
+vim.g.neovide_refresh_rate = 165 -- Refresh rate when neovide is focused
+vim.g.neovide_refresh_rate_idle = 5 -- Refresh rate when neovide is not focused
+vim.g.neovide_transparency = 0.85 -- Neovide window transparency
+vim.g.neovide_floating_blur_amount_x = 15.0 -- Blur for floating windows
+vim.g.neovide_floating_blur_amount_y = 15.0 -- Blur for floating windows
+vim.g.neovide_cursor_animation_length = 0.13 -- How long the cursor tail is when it jumps around
+vim.g.neovide_cursor_antialiasing = true -- Cursor antialiasing
+vim.g.neovide_cursor_vfx_mode = "pixiedust" -- Creates a magical trail as the cursor jumps around
+vim.g.neovide_cursor_vfx_particle_lifetime = 2.0 -- Make the particles last for two seconds
+vim.g.neovide_cursor_vfx_particle_density = 12.0 -- Makes the particles a little denser
+
+vim.g.catppuccin_flavour = "mocha"
+require("catppuccin").setup()
+vim.cmd [[colorscheme catppuccin]]
 
 -- Utility function for remapping keys
 local key_mapper = function(mode, key, result)
@@ -61,7 +76,7 @@ packer.init({
 -- Initialize plugins
 packer.startup(function()
   local use = use
-  -- add you plugins here like:
-  -- use 'neovim/nvim-lspconfig'
+  use 'wbthomason/packer.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
   end
 )
