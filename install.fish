@@ -23,7 +23,7 @@ end
 echo "[t] Checking if t is installed"
 which t 2&> /dev/null
 if [ $status -eq 0 ]
-  echo "installed"
+  echo [t] t already installed, skipping setup.
 else
   echo "Need to install t. This may prompt you for your sudo password."
   mkdir --parents ~/.local/t 
