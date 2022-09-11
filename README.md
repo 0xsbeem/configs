@@ -3,7 +3,7 @@
 ## Pre-requisites
 
 * You must have fish installed at /usr/local/bin/fish (or at least there must be a symlink there). Alternatively you can run the install script with `fish install.fish`, but fish still needs to be installed.
-* You must have Mercurial installed
+* You must have Mercurial installed. `t`, the task management tool I use, is stored in a Mercurial repository. In current year. Can you believe it?
 
 To install these scripts, run the install.fish script. 
 
