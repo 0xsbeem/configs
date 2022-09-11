@@ -1,0 +1,25 @@
+# /etc/skel/.bashrc
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+
+# Disable creation of the ~/.lesshst file
+export LESSHISTFILE=-
+
+# Python shell initilization location
+export PYTHONSTARTUP=~/.config/python/pythonrc
+
+# Change location of .Xauthority file
+export XAUTHORITY=~/.config/x/Xauthority
+
+# Change location of .bash_history file
+export HISTFILE=~/.local/history/bash_history
+
+# Change location of global git config
+export GIT_CONFIG_GLOBAL=~/.config/git/gitconfig
+
+# Set the base directory for XDG specification
+export XDG_CONFIG_HOME=~/.config
+
+alias sx="startx ~/.config/x/xinitrc" # Start X with the custom xinitrc 
