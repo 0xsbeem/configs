@@ -23,3 +23,22 @@ export GIT_CONFIG_GLOBAL=~/.config/git/gitconfig
 export XDG_CONFIG_HOME=~/.config
 
 alias sx="startx ~/.config/x/xinitrc" # Start X with the custom xinitrc 
+alias feature="t --task-dir ./.tasks/features/"
+alias bug="t --task-dir ./.tasks/bugs/"
+
+list_tasks() {
+  _features=$(t --task-dir ./.tasks/features --list tasks)
+  _bugs=$(t --task-dir ./.tasks/bugs --list tasks)
+  readarray -t features <<<"$_features"
+  readarray -t bugs <<<"$_bugs"
+  for feature in "${features[@]}"
+  do
+    echo "[FEATURE] $feature"
+  done
+
+  for bug in "${bugs[@]}"
+  do
+    echo "[BUG] $bug"
+  done
+}
+alias tlist='list_tasks'
