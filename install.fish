@@ -8,6 +8,6 @@ if [ "$os" = "Darwin" ]
 	ln -sf "$fullpath" $HOME/nvim/init.lua
 else
 	set fullpath $(readlink -f nvim/init.lua)
-	ln -sf $fullpath $HOME/nvim/init.lua
+	ln -sf $fullpath $XDG_CONFIG_HOME/nvim/init.lua
 end
 
