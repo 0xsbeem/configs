@@ -45,3 +45,8 @@ list_tasks() {
   done
 }
 alias tlist='list_tasks'
+
+# Get AWS credentials if this system has them
+if [[ -e ~/.config/bash/aws ]]; then
+  source ~/.config/bash/aws
+fi
