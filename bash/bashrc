@@ -28,15 +28,17 @@ source ~/.cargo/env
 # Get any sensitive information configured on the local system (stuff that you shouldn't store in VC
 source ~/.config/bash/personal.env
 
+alias resetaws="rm -f ~/.config/bash/aws-session.env; source ~/.config/bash/aws.env" # Removes an aws session and returns to default aws credentials
 alias sx="startx ~/.config/x/xinitrc" # Start X with the custom xinitrc 
-alias feature="t --task-dir ./.tasks/features/"
-alias bug="t --task-dir ./.tasks/bugs/"
-alias tf="terraform"
-aws-decode() {
+alias feature="t --task-dir ./.tasks/features/" # Create a feature task in the current directory
+alias bug="t --task-dir ./.tasks/bugs/" # Create a bug task in the current directory
+alias tf="terraform" # Just a shorter form of typing terraform
+alias get-aws-creds="~/.scripts/get-aws-creds" # Shortcut for get-aws-creds command
+aws-decode() { # Decodes an encoded authorization message from AWS
   aws sts decode-authorization-message --encoded-message $1
 }
 
-list_tasks() {
+list_tasks() { # Helper function for tlist alias
   _features=$(t --task-dir ./.tasks/features --list tasks)
   _bugs=$(t --task-dir ./.tasks/bugs --list tasks)
   readarray -t features <<<"$_features"
@@ -51,9 +53,11 @@ list_tasks() {
     echo "[BUG] $bug"
   done
 }
-alias tlist='list_tasks'
+alias tlist='list_tasks' # Lists the tasks in a repo
 
 # Get AWS credentials if this system has them
 if [[ -e ~/.config/bash/aws.env ]]; then
   source ~/.config/bash/aws.env
 fi
+
+
