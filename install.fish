@@ -20,6 +20,13 @@ else
 	ln -sf $fullpath $XDG_CONFIG_HOME/bash/bashrc
 end
 
+if [ ! -f $XDG_CONFIG_HOME/bash/personal.env ]
+  echo "[bash] Personal env file exists. Skipping creation."
+else
+  echo "[bash] Creating personal.env file"
+  cp bash/personal.env $XDG_CONFIG_HOME/bash/personal.env
+end
+
 echo "[t] Checking if t is installed"
 which t 2&> /dev/null
 if [ $status -eq 0 ]
@@ -30,4 +37,3 @@ else
   hg clone https://hg.stevelosh.com/t ~/.local/t
   sudo ln -sf ~/.local/t/t.py /usr/local/bin/t
 end
-

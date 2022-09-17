@@ -25,10 +25,16 @@ export XDG_CONFIG_HOME=~/.config
 # Add rust packages to PATH
 source ~/.cargo/env
 
+# Get any sensitive information configured on the local system (stuff that you shouldn't store in VC
+source ~/.config/bash/personal.env
+
 alias sx="startx ~/.config/x/xinitrc" # Start X with the custom xinitrc 
 alias feature="t --task-dir ./.tasks/features/"
 alias bug="t --task-dir ./.tasks/bugs/"
 alias tf="terraform"
+aws-decode() {
+  aws sts decode-authorization-message --encoded-message $1
+}
 
 list_tasks() {
   _features=$(t --task-dir ./.tasks/features --list tasks)
@@ -48,6 +54,6 @@ list_tasks() {
 alias tlist='list_tasks'
 
 # Get AWS credentials if this system has them
-if [[ -e ~/.config/bash/aws ]]; then
-  source ~/.config/bash/aws
+if [[ -e ~/.config/bash/aws.env ]]; then
+  source ~/.config/bash/aws.env
 fi
