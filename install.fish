@@ -37,3 +37,14 @@ else
   hg clone https://hg.stevelosh.com/t ~/.local/t
   sudo ln -sf ~/.local/t/t.py /usr/local/bin/t
 end
+
+if [ ! -d ~/.scripts ]
+  echo "[scripts] Installing scripts"
+  git clone git@github.com:0xsbeem/scripts.git ~/.scripts
+else
+  echo "[scripts] Updating scripts"
+  set pwd $(pwd)
+  cd ~/.scripts
+  git pull
+  cd $pwd
+end
