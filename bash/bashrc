@@ -28,6 +28,7 @@ source ~/.cargo/env
 alias sx="startx ~/.config/x/xinitrc" # Start X with the custom xinitrc 
 alias feature="t --task-dir ./.tasks/features/"
 alias bug="t --task-dir ./.tasks/bugs/"
+alias tf="terraform"
 
 list_tasks() {
   _features=$(t --task-dir ./.tasks/features --list tasks)
