@@ -31,7 +31,7 @@ source ~/.config/bash/personal.env
 alias cdg="cd ~/code" # Shortcut to go to code directory
 alias cdp="cd ~/code/personal" # Shortcut to go to personal code directory
 alias cdps="cd ~/code/personal/scripts" # Shortcut to go to personal scripts directory
-alias cdpc="cd ~/code/personal/config" # Shortcut to go to personal config directory
+alias cdpc="cd ~/code/personal/configs" # Shortcut to go to personal configs directory
 alias cdr="cd ~/code/rosales" # Shortcut to go to rosales code directory
 alias resetaws="rm -f ~/.config/bash/aws-session.env; source ~/.config/bash/aws.env" # Removes an aws session and returns to default aws credentials
 alias sx="startx ~/.config/x/xinitrc" # Start X with the custom xinitrc 
