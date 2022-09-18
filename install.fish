@@ -20,7 +20,7 @@ else
 	ln -sf $fullpath $XDG_CONFIG_HOME/bash/bashrc
 end
 
-if [ ! -f $XDG_CONFIG_HOME/bash/personal.env ]
+if [ -f $XDG_CONFIG_HOME/bash/personal.env ]
   echo "[bash] Personal env file exists. Skipping creation."
 else
   echo "[bash] Creating personal.env file"
