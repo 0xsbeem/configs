@@ -38,10 +38,7 @@ alias sx="startx ~/.config/x/xinitrc" # Start X with the custom xinitrc
 alias feature="t --task-dir ./.tasks/features/" # Create a feature task in the current directory
 alias bug="t --task-dir ./.tasks/bugs/" # Create a bug task in the current directory
 alias tf="terraform" # Just a shorter form of typing terraform
-alias get-aws-creds="~/.scripts/aws/get-aws-creds" # Shortcut for get-aws-creds command
-aws-decode() { # Decodes an encoded authorization message from AWS
-  aws sts decode-authorization-message --encoded-message $1
-}
+alias get-aws-creds="source ~/.scripts/aws/get-aws-creds" # Shortcut for get-aws-creds command
 
 list_tasks() { # Helper function for tlist alias
   _features=$(t --task-dir ./.tasks/features --list tasks)
