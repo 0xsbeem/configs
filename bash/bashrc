@@ -28,6 +28,11 @@ source ~/.cargo/env
 # Get any sensitive information configured on the local system (stuff that you shouldn't store in VC
 source ~/.config/bash/personal.env
 
+alias cdg="cd ~/code" # Shortcut to go to code directory
+alias cdp="cd ~/code/personal" # Shortcut to go to personal code directory
+alias cdps="cd ~/code/personal/scripts" # Shortcut to go to personal scripts directory
+alias cdpc="cd ~/code/personal/config" # Shortcut to go to personal config directory
+alias cdr="cd ~/code/rosales" # Shortcut to go to rosales code directory
 alias resetaws="rm -f ~/.config/bash/aws-session.env; source ~/.config/bash/aws.env" # Removes an aws session and returns to default aws credentials
 alias sx="startx ~/.config/x/xinitrc" # Start X with the custom xinitrc 
 alias feature="t --task-dir ./.tasks/features/" # Create a feature task in the current directory
@@ -55,9 +60,9 @@ list_tasks() { # Helper function for tlist alias
 }
 alias tlist='list_tasks' # Lists the tasks in a repo
 
-# Get AWS credentials if this system has them
+# Get AWS credentials if this system has them.
+# These are default credentials. If the IAM account you want to access requires MFA, you'll have to 
+# use get-aws-creds to get MFA-compatible creds.
 if [[ -e ~/.config/bash/aws.env ]]; then
   source ~/.config/bash/aws.env
 fi
-
-
