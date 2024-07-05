@@ -1,3 +1,0 @@
-update install script to create /home/chaghyar/.config/nvim and /home/chaghyar/.config/bash directories | id:4537a4f087ca239dafd82df92de353e0dc528f72
-update install script to symlink scripts instead of clone a new repo | id:c0abb5da6f8f3a39b043c5f65468aee2e3ce5b4a
-update install script to ensure XDG_CONFIG_HOME is set | id:ffa13b8389f4a125ea1ebaa65b7a94d78dac6a7b
